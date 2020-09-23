@@ -1,0 +1,27 @@
+server:
+  port: 8762
+
+spring:
+  application:
+    name: ryver-gateway
+
+eureka:
+  client:
+    register-with-eureka: false # The gateway should not be registered as a service.
+    fetch-registry: true        # The gateway needs the registry to find other services.
+    service-url:
+      default-zone: ${EUREKA_URL:http://localhost:8761}/eureka/
+
+zuul:
+  sensitive-headers: Cookie,Set-Cookie
+  routes:
+    auth:
+      path: /auth/**
+      service-id: ryver-auth
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+

@@ -1,0 +1,10 @@
+# Check auth route.
+
+###
+GET http://localhost:8762/auth/
+
+###
+GET http://localhost:8762/auth/users
+Accept: application/json
+Authorization: Basic manager_1 01_manager_01
+
