@@ -6,10 +6,6 @@ Accept: application/json
 Authorization: Basic manager_1 01_manager_01
 
 ###
-GET http://localhost:8080/customers/01
-Authorization: Basic manager_1 01_manager_01
-
-###
-GET http://localhost:8080/customers/test_auth
+GET http://localhost:8080/customers
 Authorization: Basic manager_1 01_manager_01
 
