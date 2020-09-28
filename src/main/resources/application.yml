@@ -15,9 +15,14 @@ eureka:
 zuul:
   sensitive-headers: Cookie,Set-Cookie
   routes:
-    auth:
-      path: /auth/**
+    login:
+      path: /login
       service-id: ryver-auth
+      strip-prefix: false
+    customers:
+      path: /customers/**
+      service-id: ryver-auth
+      strip-prefix: false
 
 management:
   endpoints:
