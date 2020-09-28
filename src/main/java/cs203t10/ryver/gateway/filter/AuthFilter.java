@@ -14,10 +14,12 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
+
+import static cs203t10.ryver.gateway.filter.SecurityConstants.AUTH_HEADER_KEY;
+import static cs203t10.ryver.gateway.filter.SecurityConstants.BASIC_PREFIX;
 
 @EnableDiscoveryClient
 public class AuthFilter extends ZuulFilter {
@@ -54,13 +56,13 @@ public class AuthFilter extends ZuulFilter {
     public Object run() throws ZuulException {
         RequestContext requestContext = RequestContext.getCurrentContext();
         HttpServletRequest request = requestContext.getRequest();
-        String authHeader = request.getHeader("Authorization");
+        String authHeader = request.getHeader(AUTH_HEADER_KEY);
 
         // If the request uses Basic authentication, generate and append a JWT
         // using the ryver-auth service.
-        if (authHeader != null && authHeader.startsWith("Basic ")) {
+        if (authHeader != null && authHeader.startsWith(BASIC_PREFIX)) {
             String jwtToken = getJWTBearerToken(authHeader);
-            requestContext.addZuulRequestHeader("Authorization", jwtToken);
+            requestContext.addZuulRequestHeader(AUTH_HEADER_KEY, jwtToken);
         }
 
         return null;
@@ -73,11 +75,11 @@ public class AuthFilter extends ZuulFilter {
         String loginUrl = url + "login";
 
         HttpHeaders headers = new HttpHeaders();
-        headers.set("Authorization", basicAuthHeader);
+        headers.set(AUTH_HEADER_KEY, basicAuthHeader);
         HttpEntity<String> request = new HttpEntity<>("", headers);
         try {
             ResponseEntity<String> response = restTemplate.postForEntity(loginUrl, request, String.class);
-            return response.getHeaders().getFirst("Authorization");
+            return response.getHeaders().getFirst(AUTH_HEADER_KEY);
         } catch (RestClientException e) {
             return "";
         }
