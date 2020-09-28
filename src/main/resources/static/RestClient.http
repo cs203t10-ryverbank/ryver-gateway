@@ -6,6 +6,10 @@ Accept: application/json
 Authorization: Basic manager_1 01_manager_01
 
 ###
-GET http://localhost:8080/customers
+GET http://localhost:8080/customers/01
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYW5hZ2VyXzEiLCJ1aWQiOjEsImF1dGgiOiJST0xFX01BTkFHRVIiLCJleHAiOjE2MDIxNzMyNjZ9.LXpkpGCAfJy5okwhTVbOcMGd8iyh0YwKqvbo8n4MsvEZHiecXt150zbVeil6Tm0lFyjH0hp7xbu51sJKEcMP5Q
+
+###
+GET http://localhost:8080/customers/test_auth
+Authorization: Basic manager_1 01_manager_01
 
