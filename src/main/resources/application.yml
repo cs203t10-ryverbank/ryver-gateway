@@ -27,6 +27,10 @@ zuul:
       path: /accounts/**
       service-id: ryver-fts
       strip-prefix: true
+    cms:
+      path: /cms/**
+      service-id: ryver-cms
+      strip-prefix: false
 
 management:
   endpoints:
