@@ -23,6 +23,10 @@ zuul:
       path: /customers/**
       service-id: ryver-auth
       strip-prefix: false
+    fts:
+      path: /accounts/**
+      service-id: ryver-fts
+      strip-prefix: true
 
 management:
   endpoints:
