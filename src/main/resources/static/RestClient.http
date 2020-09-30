@@ -9,3 +9,40 @@ Authorization: Basic manager_1 01_manager_01
 GET http://localhost:8080/customers
 Authorization: Basic manager_1 01_manager_01
 
+### Create new user
+POST http://localhost:8081/customers
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYW5hZ2VyXzEiLCJ1aWQiOjEsImF1dGgiOiJST0xFX01BTkFHRVIiLCJleHAiOjE2MDE5OTgzNDZ9.IoJywDJUqXx7dLoe1IxeuGWz-RQyG1TG_D_Sx1nPqO6xWxB8lwrr1vDO9JpbSI-HHTz6Sx3UdqD7ZqsyKZBkYw
+
+{
+    "full_name":"Mark Tan",
+    "nric":"S8291266I",
+    "phone":"91251234",
+    "address":"27 Jalan Alamak S680234",
+    "username":"bryan",
+    "password":"password",
+    "authorities":"ROLE_USER",
+    "active": true
+}
+
+### Create account as manager
+POST http://localhost:8080/accounts
+Content-Type: application/json
+Authorization: Basic manager_1 01_manager_01
+
+{
+    "customer_id":4,
+    "balance":0.0,
+    "available_balance":0.0
+}
+
+### View own accounts as user
+GET http://localhost:8080/accounts
+Accept: application/json
+Authorization: Basic bryan password
+
+### View each account as user
+GET http://localhost:8080/accounts/51
+Accept: application/json
+Authorization: Basic bryan password
+
