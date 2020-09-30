@@ -28,7 +28,7 @@ zuul:
       service-id: ryver-fts
       strip-prefix: true
     cms:
-      path: /cms/**
+      path: /contents/**
       service-id: ryver-cms
       strip-prefix: false
 
