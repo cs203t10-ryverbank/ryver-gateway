@@ -33,7 +33,7 @@ Authorization: Basic manager_1 01_manager_01
 ### Update a user
 # If using manager access, most fields should be updatable
 # If using customer access, limited fields should be updatable
-PUT http://localhost:8081/customers/4
+PUT http://localhost:8080/customers/4
 Content-Type: application/json
 # Authorization: Basic manager_1 01_manager_01
 Authorization: Basic marktan password
