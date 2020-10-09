@@ -71,6 +71,9 @@ public class AuthFilter extends ZuulFilter {
     private String getJWTBearerToken(String basicAuthHeader) {
         // Find an instance of the auth service.
         List<ServiceInstance> instances = discoveryClient.getInstances("ryver-auth");
+        if (instances.size() == 0) {
+            throw new NoInstanceException("ryver-auth");
+        }
         String url = instances.get(0).getUri().toString();
         String loginUrl = url + "login";
 
