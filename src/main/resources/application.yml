@@ -11,9 +11,14 @@ eureka:
     fetch-registry: true        # The gateway needs the registry to find other services.
     service-url:
       default-zone: ${EUREKA_URL:http://localhost:8761}/eureka/
+  instance:
+    hostname: ryver-registry
 
 zuul:
   sensitive-headers: Cookie,Set-Cookie
+  ribbon:
+    eager-load:
+      enabled: true
   routes:
     login:
       path: /login
