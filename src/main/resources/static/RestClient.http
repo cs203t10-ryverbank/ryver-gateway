@@ -1,6 +1,7 @@
 # RESET
 # =====
 POST http://localhost:8080/reset
+Authorization: Basic manager_1 01_manager_01
 
 # AUTH SERVICE
 # ============
