@@ -31,8 +31,16 @@ zuul:
       path: /contents/**
       service-id: ryver-cms
       strip-prefix: false
-    market:
+    trades:
       path: /trades/**
+      service-id: ryver-market
+      strip-prefix: false
+    stocks:
+      path: /stocks/**
+      service-id: ryver-market
+      strip-prefix: false
+    portfolio:
+      path: /portfolio/**
       service-id: ryver-market
       strip-prefix: false
 
