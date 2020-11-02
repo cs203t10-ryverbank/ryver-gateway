@@ -6,4 +6,3 @@ WORKDIR /app
 COPY ./target/out.jar .
 # Run the application.
 ENTRYPOINT ["java", "-jar", "./out.jar"]
-

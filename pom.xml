@@ -66,7 +66,7 @@
 				<version>0.0.6</version>
 			</plugin>
 		</plugins>
-        <finalName>out</finalName>
+		<finalName>out</finalName>
 	</build>
 
 </project>
