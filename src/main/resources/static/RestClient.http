@@ -1,7 +1,14 @@
 # RESET
 # =====
+# POST http://ryver.life/reset
 POST http://localhost:8080/reset
 Authorization: Basic manager_1 01_manager_01
+
+
+# HEALTH
+# ======
+GET http://localhost:8080/services
+
 
 # AUTH SERVICE
 # ============
