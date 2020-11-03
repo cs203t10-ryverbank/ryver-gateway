@@ -1,17 +1,19 @@
 # RESET
 # =====
-# POST http://ryver.life/reset
-POST http://localhost:8080/reset
+POST https://ryver.life/reset
+# POST http://localhost:8080/reset
 Authorization: Basic manager_1 01_manager_01
 
 
 # UTILITY
 # =======
 ### Check active services.
-GET http://localhost:8080/services
+GET https://ryver.life/services
+# GET http://localhost:8080/services
 
 ### Toggle date utility.
-POST http://localhost:8080/trades/toggle-date-util
+POST https://ryver.life/market/flip-open/true
+# POST http://localhost:8080/trades/toggle-date-util
 Authorization: Basic manager_1 01_manager_01
 
 
