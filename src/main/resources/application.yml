@@ -48,6 +48,11 @@ zuul:
       path: /portfolio/**
       service-id: ryver-market
       strip-prefix: false
+    market:
+      path: /market/**
+      service-id: ryver-market
+      strip-prefix: false
+
 
 management:
   endpoints:
