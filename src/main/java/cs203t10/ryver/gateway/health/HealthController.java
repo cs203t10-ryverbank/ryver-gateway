@@ -18,7 +18,7 @@ public class HealthController {
     @GetMapping("/services")
     public List<String> getDetectedServices() {
         List<String> serviceNames = List.of(
-                "ryver-auth", "ryver-fts", "ryver-cms", "ryver-market");
+                "ryver-auth", "ryver-fts", "ryver-cms", "ryver-market", "ryver-recommendations");
         return serviceNames.stream()
             .filter(this::hasInstanceOf)
             .collect(Collectors.toList());

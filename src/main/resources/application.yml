@@ -32,6 +32,10 @@ zuul:
       path: /accounts/**
       service-id: ryver-fts
       strip-prefix: false
+    recommendations:
+      path: /contents/recommendations/**
+      service-id: ryver-recommendations
+      strip-prefix: true
     cms:
       path: /contents/**
       service-id: ryver-cms
