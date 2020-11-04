@@ -1,7 +1,7 @@
 # RESET
 # =====
-POST https://ryver.life/reset
-# POST http://localhost:8080/reset
+# POST https://ryver.life/reset
+POST http://localhost:8080/reset
 Authorization: Basic manager_1 01_manager_01
 
 
@@ -26,7 +26,8 @@ Accept: application/json
 Authorization: Basic manager_1 01_manager_01
 
 ### Get all customers
-GET http://localhost:8080/customers
+# GET http://localhost:8080/customers
+GET https://ryver.life/customers
 Authorization: Basic manager_1 01_manager_01
 
 ### Get all customers without right authorities
@@ -67,13 +68,15 @@ Authorization: Basic marktan password
 # ===========
 
 ### Manager view of CMS - retrieve full list of contents
-GET http://localhost:8080/contents/
+# GET http://localhost:8080/contents/
+GET https://ryver.life/contents
 Accept: application/json
 Authorization: Basic manager_1 01_manager_01
 
 ### Basic user view of CMS - retrieve full list of contents
 GET http://localhost:8080/contents/
 Accept: application/json
+Authorization: Basic good_user_1 01_user_01
 
 ### Manager approves unapproved content
 PUT http://localhost:8080/contents/3
@@ -150,6 +153,7 @@ Authorization: Basic marktan password
 # ===============
 
 ### Get recommendations root
-GET http://localhost:8080/contents/recommendations/5
+# GET http://localhost:8080/contents/recommendations/5
+GET https://ryver.life/contents/recommendations
 Content-Type: application/json
-Authorization: Basic good_user_1 01_user_01
+Authorization: Basic good_user_2 02_user_02
