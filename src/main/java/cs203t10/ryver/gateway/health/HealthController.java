@@ -15,7 +15,7 @@ public class HealthController {
     @Autowired
     private DiscoveryClient discoveryClient;
 
-    @GetMapping("/services")
+    // @GetMapping("/services")
     public List<String> getDetectedServices() {
         List<String> serviceNames = List.of(
                 "ryver-auth", "ryver-fts", "ryver-cms", "ryver-market", "ryver-recommendations");
