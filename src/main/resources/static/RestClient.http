@@ -157,3 +157,4 @@ Authorization: Basic marktan password
 GET https://ryver.life/contents/recommendations
 Content-Type: application/json
 Authorization: Basic good_user_2 02_user_02
+# Authorization: Basic manager_1 01_manager_01
